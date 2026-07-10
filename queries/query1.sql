@@ -1,3 +1,5 @@
-SELECT employee_id, first_name, last_name, NVL(commission_pct, 0) as comm
+-- Migrated query
+SELECT employee_id, first_name, last_name, IFNULL(commission_pct, 0) as commission_amount
 FROM hr.employees
-WHERE department_id = 50 AND ROWNUM <= 100;
+WHERE department_id = 50
+LIMIT 500;
